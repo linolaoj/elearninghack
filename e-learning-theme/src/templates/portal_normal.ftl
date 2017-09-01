@@ -34,6 +34,9 @@
 					</span>
 				</#if>
 			</h1>
+			<div class="user-personal-bar">
+				<@liferay.user_personal_bar />
+			</div>
 		</div>
 
 		<#if !is_signed_in>
@@ -43,6 +46,7 @@
 		<#if has_navigation && is_setup_complete>
 			<#include "${full_templates_path}/navigation.ftl" />
 		</#if>
+		
 	</header>
 
 	<section id="content">
