@@ -1,0 +1,155 @@
+/* These inject tags are used for dynamically creating imports for themelet styles, you can place them where ever you like in this file. */
+
+/* inject:imports */
+/* endinject */
+
+/* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
+
+#banner {
+    background-color: #242424;
+
+    background: -webkit-linear-gradient(left top, #242424, #343434); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(bottom right, #242424, #343434); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(bottom right, #242424, #343434); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, #242424, #343434); /* Standard syntax */
+
+    #heading {
+        padding: 0 4%;
+
+        .site-title {
+            .logo {
+                padding-bottom: 16px;
+            }
+
+        	color: white;
+        }
+
+        .page-title {
+            color: white;
+            font-style: oblique;
+            text-transform: uppercase;
+        }
+    }
+
+    /* ---------- Main Navigation ---------- */
+
+    #navigation {
+        background-color: #202020;
+        display: block;
+        position: relative;
+        z-index: 1;
+
+        .active{
+            background-color: #00C4FF;
+                > a {
+                    color: #FFF;
+                }
+        }        
+
+        .dropdown-menu li {
+            background: #00ACFF;
+            border-width: 0;
+            margin: 0;
+            position: relative;
+
+            &:after, &:before {
+                border-width: 0;
+            }
+
+            a {
+                color: #FFF;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+                }
+            }
+        }
+
+        li {
+            margin: 0 4px;
+            padding: 15px 10px;
+            position: absolute;
+
+            &:hover {
+                background-color: #00C4FF;
+
+                .child-menu {
+                    display: block;
+                    margin-top: 0;
+                }
+
+                a {
+                    color: #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        ul {
+            li {
+                &:hover {
+                background-color:#00C4FF;
+                    .child-menu {
+                        display: block;
+                        padding: 0;
+                        li {
+                            background-color: white;
+                            &:hover {
+                                background-color: #00C4FB;
+                            }
+                        }
+                        a {
+                            color: #FFF;
+                            margin: -10px;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        > ul > li {
+            display: inline-block;
+            font-size: 1.2em;
+            position: relative;
+
+            a {
+                color: #FFF;
+                padding: 15px 10px;
+            }
+        }
+    }
+}
+
+body {
+	background-color: #141414;
+	color: white;
+}
+
+.portlet-decorate .portlet-content {
+	background-color: #343434;
+    border-style: none;
+}
+
+.portlet-body{
+    background-color: inherit;
+}
+
+.breadcrumb {
+    background-color: inherit;
+}
+
+footer{
+    background-color: #2D2D2D;
+    
+    background: -webkit-linear-gradient(left top, #2D2D2D, #363636); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(bottom right, #2D2D2D, #363636); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(bottom right, #2D2D2D, #363636); /* For Firefox 3.6 to 15 */
+  	background: linear-gradient(to bottom right, #2D2D2D, #363636); /* Standard syntax */
+    padding: 35px;
+        .powered-by {
+            color: white;
+            float: right;
+            margin-top: 0;
+        }
+}
