@@ -1,0 +1,3 @@
+Bundle-Name: dynamic-data-lists-service-wrapper
+Bundle-SymbolicName: com.liferay.service.override
+Bundle-Version: 1.0.0
