@@ -5,6 +5,12 @@
 
 /* This file allows you to override default styles in one central location for easier upgrade and maintenance. */
 
+.portlet-decorate .portlet-content {
+    background: #343434;
+    color:  #CAC4C4;
+    
+}
+
 #banner {
     background-color: #242424;
 
@@ -123,7 +129,7 @@
 
 body {
 	background-color: #141414;
-	color: white;
+	/*color: #524F4F;*/
 }
 
 .portlet-decorate .portlet-content {
@@ -132,8 +138,8 @@ body {
 }
 
 .portlet-body{
-    background-color: inherit;
-    color: white;
+    background-color: #343434;
+    /*color: white;*/
 }
 
 .portlet-user-personal-bar {
@@ -145,7 +151,7 @@ body {
 }
 
 .breadcrumb {
-    background-color: inherit;
+    background-color: #343434;
 }
 
 footer{
@@ -162,3 +168,5 @@ footer{
             margin-top: 0;
         }
 }
+
+
