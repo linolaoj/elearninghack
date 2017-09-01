@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <#include init />
 
@@ -20,12 +20,12 @@
 
 <@liferay.control_menu />
 
-<div id="wrapper">
-	<header class="container-fluid-1280" id="banner" role="banner">
-		<div class="row">
-			<div class="navbar-header" id="heading">
+<div class="container-fluid" id="wrapper">
+	<header id="banner" role="banner">
+		<div id="heading">
+			<h1 class="site-title">
 				<a class="${logo_css_class}" href="${site_default_url}" title="<@liferay.language_format arguments="${site_name}" key="go-to-x" />">
-					<img alt="${logo_description}" height="64" src="${site_logo}" />
+					<img alt="${logo_description}" height="${site_logo_height}" src="${site_logo}" width="${site_logo_width}" />
 				</a>
 
 				<#if show_site_name>
@@ -33,28 +33,24 @@
 						${site_name}
 					</span>
 				</#if>
-
-				<#if is_setup_complete>
-					<button aria-controls="navigation" aria-expanded="false" class="collapsed navbar-toggle" data-target="#navigationCollapse" data-toggle="collapse" type="button">
-						<span class="icon-bar"></span>
-
-						<span class="icon-bar"></span>
-
-						<span class="icon-bar"></span>
-					</button>
-
-					<div class="pull-right user-personal-bar">
-						<@liferay.user_personal_bar />
-					</div>
-				</#if>
-			</div>
-
-			<#include "${full_templates_path}/navigation.ftl" />
+			</h1>
 		</div>
+
+		<#if !is_signed_in>
+			<a data-redirect="${is_login_redirect_required?string}" href="${sign_in_url}" id="sign-in" rel="nofollow">${sign_in_text}</a>
+		</#if>
+
+		<#if has_navigation && is_setup_complete>
+			<#include "${full_templates_path}/navigation.ftl" />
+		</#if>
 	</header>
 
-	<section class="container-fluid-1280" id="content">
+	<section id="content">
 		<h1 class="hide-accessible">${the_title}</h1>
+
+		<nav id="breadcrumbs">
+			<@liferay.breadcrumbs />
+		</nav>
 
 		<#if selectable>
 			<@liferay_util["include"] page=content_include />
@@ -69,16 +65,19 @@
 		</#if>
 	</section>
 
-	<footer class="container-fluid-1280" id="footer" role="contentinfo">
-		<div class="row">
-			<@liferay.language key="powered-by-zzz" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
-		</div>
+	<footer id="footer" role="contentinfo">
+		<p class="powered-by">
+			<@liferay.language key="powered-by" /> <a href="http://www.liferay.com" rel="external">Liferay</a>
+		</p>
 	</footer>
 </div>
 
 <@liferay_util["include"] page=body_bottom_include />
 
 <@liferay_util["include"] page=bottom_include />
+
+<!-- inject:js -->
+<!-- endinject -->
 
 </body>
 
